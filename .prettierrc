@@ -5,3 +5,5 @@
   "trailingComma": "es5",
   "bracketSpacing": true
 }
+
+//  this is use for prettier configuration so that our code will be formatted in a proper way and when we work in a team then everyone will follow the same pattern of code.
