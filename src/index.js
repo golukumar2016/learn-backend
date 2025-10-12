@@ -12,22 +12,17 @@ dotenv.config({
 
 import dotenv from "dotenv";
 
-
-
-import ConnectDB from "./db/index.js";
-
-import express from "express";
-const app = express();
-
+import connectDB from "./db/index.js";
+import {app} from './app.js'
 
 dotenv.config({
-  path:'./env'
+  path:'./.env'
 })
 
 
-ConnectDB()
+connectDB()
 .then(()=>{
-  app.listen(process.env.PORT || 8000, ()=>{
+  app.listen(process.env.PORT || 3000, ()=>{
     console.log(`server is running at prot : ${process.env.PORT}`);
   })
 }).catch((err)=>{
