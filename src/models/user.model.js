@@ -51,7 +51,7 @@ const userSchema = new Schema(
 userSchema.pre("save", async function (next){ // means before save this data you have run this
   if(!this.isModified("password")) return next(); //this.isModified is a method which return boolen value is modified or not
 
-  this.password = bcrypt.hash(this.password, 10)  // make this in hash in 10 rounds to encode passord
+  this.password = await bcrypt.hash(this.password, 10)  // make this in hash in 10 rounds to encode passord
   next()
 })
 
